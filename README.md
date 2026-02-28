@@ -162,24 +162,3 @@ Transaction management
 API design best practices
 
 Dockerized development environment
-
-
----
-
-## What To Do Next
-
-1. Replace your existing README with this.
-2. Commit:
-
-```bash
-git add README.md
-git commit -m "docs: add production-style README"
-git push
-
-Now I’m going to ask something important:
-
-Are you comfortable putting your real name in the repo description and adding a short LinkedIn-ready one-line summary like:
-
-Backend-focused trading order simulation API built with FastAPI and PostgreSQL.
-
-Because that small branding move increases recruiter conversion noticeably.
