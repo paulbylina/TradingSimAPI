@@ -13,6 +13,8 @@ services:
   api:
     build: .
     env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/trading
     ports:
       - "8000:8000"
     depends_on:
