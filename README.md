@@ -108,15 +108,40 @@ This guarantees atomic and consistent state transitions.
 
 ```bash
 cp .env.example .env
+```
 
-Start services:
+2. Start services:
 
+```bash
 docker compose up --build
+```
 
-Open API documentation:
+3. Open API documentation:
 
+```text
 http://localhost:8000/docs
-Example Usage
+```
+
+### Common DB auth issue
+
+If you see this error:
+
+```text
+psycopg2.OperationalError: FATAL: password authentication failed for user "postgres"
+```
+
+it means your app credentials do not match the running database credentials.
+
+- If running with Docker Compose, this project expects `postgres/postgres` by default.
+- If your local Postgres uses a different password, update `DATABASE_URL` (or `POSTGRES_*` values) in `.env`.
+- If you changed DB credentials in Docker previously, recreate volumes:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+## Example Usage
 
 Create a user:
 
