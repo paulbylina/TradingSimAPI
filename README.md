@@ -25,6 +25,29 @@ The focus is correctness, relational modeling, and transactional integrity.
 
 ---
 
+
+## Project Structure
+
+```
+trading-sim-api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── db.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── services.py
+├── tests/
+│   └── test_orders.py
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
 ## Architecture
 
 
