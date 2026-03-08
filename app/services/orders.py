@@ -13,8 +13,11 @@ def create_order(db, order_in):
     order = Order(
         account_id=account.id,
         symbol=order_in.symbol,
-        side=order_in.side,
-        quantity=order_in.quantity
+        side=order_in.side.upper(),
+        quantity=order_in.quantity,
+        status="filled",
+        filled_price=settings.mock_fill_price,
+        reject_reason=None,
     )
 
     db.add(order)

@@ -7,6 +7,7 @@ class OrderCreate(BaseModel):
     symbol: str = Field(..., min_length=1, max_length=16)
     side: str
     quantity: int = Field(..., gt=0)
+    price: Decimal
 
     @field_validator("symbol")
     @classmethod
@@ -27,7 +28,8 @@ class OrderCreate(BaseModel):
                 "user_id": 1,
                 "symbol": "AAPL",
                 "side": "buy",
-                "quantity": 10
+                "quantity": 10,
+                "price": 100
             }
         }
     }
@@ -35,11 +37,13 @@ class OrderCreate(BaseModel):
 
 class OrderResponse(BaseModel):
     id: int
-    user_id: int
+    account_id: int
     symbol: str
     side: str
     quantity: int
-    price: Decimal
+    status: str
+    filled_price: Decimal | None
+    reject_reason: str | None
 
     model_config = {
         "from_attributes": True,

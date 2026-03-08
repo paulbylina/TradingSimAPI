@@ -10,11 +10,11 @@ def _build_database_url() -> str:
 
     user = os.getenv("POSTGRES_USER", "postgres")
     password = os.getenv("POSTGRES_PASSWORD", "postgres")
-    host = os.getenv("POSTGRES_HOST", "localhost")
+    host = os.getenv("POSTGRES_HOST", "db")
     port = os.getenv("POSTGRES_PORT", "5432")
     db = os.getenv("POSTGRES_DB", "trading")
 
-    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}"
+    return f"postgresql+psycopg://{user}:{password}@{host}:{port}/{db}"
 
 
 class Settings(BaseModel):
