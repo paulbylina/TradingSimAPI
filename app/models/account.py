@@ -13,9 +13,8 @@ from app.db import Base
 
 if TYPE_CHECKING:
     from app.models.user import User
-    from app.models.order import Order
+    from app.models.orders import Order
     from app.models.position import Position
-    from app.models.trade import Trade
 
 
 class Account(Base):
@@ -32,7 +31,6 @@ class Account(Base):
     user: Mapped["User"] = relationship(back_populates="account")
     orders: Mapped[list["Order"]] = relationship(back_populates="account")
     positions: Mapped[list["Position"]] = relationship(back_populates="account")
-    trades: Mapped[list["Trade"]] = relationship(back_populates="account")
 
     __table_args__ = (
         CheckConstraint("cash_balance >= 0", name="ck_accounts_cash_nonnegative"),
