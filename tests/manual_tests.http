@@ -1,5 +1,15 @@
-POST http://localhost:8000/orders
-Content-Type: application/json
+
+@baseUrl = http://localhost:8000
+@json = Content-Type: application/json
+
+# GET USERS
+GET {{baseUrl}}/users
+
+###
+
+# SUBMIT TRADE
+POST {{baseUrl}}/orders
+{{json}}
 
 {
   "user_id": 1,
@@ -8,3 +18,9 @@ Content-Type: application/json
   "quantity": 900,
   "price": 100
 }
+
+###
+
+# HEALTH CHECK
+GET {{baseUrl}}/health
+
