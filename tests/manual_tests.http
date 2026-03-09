@@ -1,0 +1,10 @@
+POST http://localhost:8000/orders
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "symbol": "AAPL",
+  "side": "sell",
+  "quantity": 900,
+  "price": 100
+}
