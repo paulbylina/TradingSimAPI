@@ -7,6 +7,7 @@ class PositionOut(BaseModel):
     symbol: str
     qty: Decimal
     avg_cost: Decimal
+    cost_basis: Decimal
     
 class AccountOut(BaseModel):
     id: int
@@ -14,4 +15,9 @@ class AccountOut(BaseModel):
     email: str
     cash_balance: Decimal
     created_at: datetime
-    
+
+class PortfolioOut(BaseModel):
+    account_found: bool
+    cash_balance: Decimal | None
+    positions: list[PositionOut]
+    total_cost_basis: Decimal

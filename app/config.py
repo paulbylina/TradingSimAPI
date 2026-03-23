@@ -14,7 +14,7 @@ def _build_database_url() -> str:
     port = os.getenv("POSTGRES_PORT", "5432")
     db = os.getenv("POSTGRES_DB", "trading")
 
-    return f"postgresql+psycopg://{user}:{password}@{host}:{port}/{db}"
+    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db}"
 
 
 class Settings(BaseModel):

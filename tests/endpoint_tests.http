@@ -14,9 +14,9 @@ POST {{baseUrl}}/orders
 {
   "user_id": 1,
   "symbol": "AAPL",
-  "side": "sell",
-  "quantity": 900,
-  "price": 100
+  "side": "buy",
+  "quantity": 20,
+  "price": 15
 }
 
 ###
@@ -24,3 +24,8 @@ POST {{baseUrl}}/orders
 # HEALTH CHECK
 GET {{baseUrl}}/health
 
+###
+
+# GET PORTFOLIO BALANCE
+GET {{baseUrl}}/portfolio?account_id=1
+{{json}}
